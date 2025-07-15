@@ -2,21 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py",      
-      "use": "@vercel/python" 
-    },
-    {
-      "src": "node_modules/execjs/_vendor/node.js",
-      "use": "@vercel/node"   
+      "src": "Dockerfile",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",        
-      "dest": "app.py"
+      "src": "/(.*)",
+      "dest": "/"
     }
-  ],
-  "env": {
-    "EXECJS_RUNTIME": "Node" 
-  }
+  ]
 }
